@@ -1,0 +1,16 @@
+docker run -it --rm python bash
+
+pip install flask
+
+pip freeze > requirements.txt
+
+cat requirements.txt
+
+docker build . --tag examtest:latest
+
+docker run -it --rm -v ${PWD} examtest
+___________________________
+
+Andet:
+
+docker run -it --rm -v ${PWD}:/docs python bash
